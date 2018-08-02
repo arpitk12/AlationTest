@@ -12,6 +12,7 @@ public class AmazonComp
 {
 	private WebDriver driver;
 	private WebDriverWait wait;
+	
 	public AmazonComp(WebDriver driver)
 	{
 		this.driver=driver;
@@ -37,18 +38,19 @@ public class AmazonComp
 		driver.findElement(element).click();
 	}
 	
+	
 	public String getText(By element)
 	{
-		Set<String> windowhandles=driver.getWindowHandles();
-		String current=driver.getWindowHandle();
-		
-		for(String handle:windowhandles)
-		{
-			if(handle!=current)
-			{
-				driver.switchTo().window(handle);
-			}
-		}
 		return driver.findElement(element).getText();
 	}
+	
+	public Boolean isElementPresent(By element)
+	{
+		if(driver.findElements(element).size()>0)
+		{
+			return true;
+		}
+		return false;
+	}
+	
 }

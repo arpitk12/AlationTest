@@ -14,8 +14,8 @@ public class AmazonPage
 	private By categoryList=By.xpath("//select[@id='searchDropdownBox']");
 	private By searchBox=By.id("twotabsearchtextbox");
 	private By searchbtn=By.xpath("//input[@type='submit']");
-	private By firstItem=By.xpath("//div[@id='atfResults']/ul/li[1]/div/div/div/div");
-	private By prod=By.id("productTitle");
+	
+	
 	public AmazonPage(WebDriver driver)
 	{
 		AmazonPage.driver=driver;
@@ -34,15 +34,11 @@ public class AmazonPage
 		comp.selectListByValue(categoryList,cat);
 		comp.enterValue(searchBox,item);
 		comp.clickOn(searchbtn);
+		
 	}
 	
-	public void selectFirstItem()
-	{
-		comp.clickOn(firstItem);
-	}
 	
-	public void getProductInfo()
-	{
-		System.out.println(comp.getText(prod));
-	}
+	
+	
+	
 }
