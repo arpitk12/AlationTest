@@ -1,22 +1,19 @@
 package com.alation.component;
 
-import java.util.Set;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AmazonComp
 {
 	private WebDriver driver;
-	private WebDriverWait wait;
+	
 	
 	public AmazonComp(WebDriver driver)
 	{
 		this.driver=driver;
-		wait=new WebDriverWait(driver,30);
+		
 	}
 	
 	public void selectListByValue(By element,String text)
